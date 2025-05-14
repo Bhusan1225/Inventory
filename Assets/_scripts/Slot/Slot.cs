@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [System.Serializable]
@@ -8,9 +9,13 @@ public class Slot
     //[SerializeField]
     private Item item;
     [SerializeField]
-    private Tool tool;
+    public Tool tool;
     [SerializeField]
     private int quantity;
+    [SerializeField]
+    private int id;
+
+    
 
     public Slot()
     {
@@ -23,7 +28,8 @@ public class Slot
     {
         this.item = _item;
         this.quantity = _quantity;
-       // this.tool = _tool;
+        // this.tool = _tool;
+        
     }
 
     public Slot(Tool _tool, int _quantity)
@@ -31,13 +37,49 @@ public class Slot
         this.tool = _tool;
         this.quantity = _quantity;
         // this.tool = _tool;
+        GetID();
     }
 
     public Item GetItem() {  return item; }
-    public Item GetTool() { return tool; }
+    public Tool GetTool() 
+    { 
+        return tool; 
+    }
+
+    public void SetTool(Tool newTool)
+    {
+        tool = newTool;
+    }
 
     public int GetQuantity() { return quantity; }
-    public void AddQuantity(int _quantity) { quantity += _quantity; }
-    public void SubQuantity(int _quantity) { quantity -= _quantity; }
+
+    public int GetID() 
+    { 
+        id =tool.itemID;
+        return id;
+    }
+
+    public string GetDescription()
+    {
+        return tool.Description;
+    }
+
+    public string GetName()
+    {
+        return tool.name;
+    }
+
+    public void AddQuantity(int _quantity)
+    {
+        quantity += _quantity;
+
+    }
+    
+    
+    public void SubQuantity(int _quantity) 
+    { 
+        quantity -= _quantity; 
+    
+    }
 
 }

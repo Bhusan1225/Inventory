@@ -5,8 +5,11 @@ using UnityEngine;
 public abstract class Item :ScriptableObject
 {
     [Header("Item")]
+    public int itemID;
     public string itemName;
     public Sprite itemIcon;
+
+    public string Description;
 
     public abstract Item GetItem();
     public abstract Tool GetTool();
