@@ -12,8 +12,10 @@ public class Slot
     public Tool tool;
     [SerializeField]
     private int quantity;
-    [SerializeField]
-    private int id;
+   
+    private string id;
+
+    private Slot slot;
 
     
 
@@ -37,7 +39,7 @@ public class Slot
         this.tool = _tool;
         this.quantity = _quantity;
         // this.tool = _tool;
-        GetID();
+        
     }
 
     public Item GetItem() {  return item; }
@@ -46,6 +48,7 @@ public class Slot
         return tool; 
     }
 
+
     public void SetTool(Tool newTool)
     {
         tool = newTool;
@@ -53,7 +56,7 @@ public class Slot
 
     public int GetQuantity() { return quantity; }
 
-    public int GetID() 
+    public string GetID() 
     { 
         id =tool.itemID;
         return id;

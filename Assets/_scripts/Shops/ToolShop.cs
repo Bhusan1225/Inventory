@@ -12,7 +12,7 @@ public class ToolShop : Shop
 
     private GameObject[] slots; // array declare
                                 // Public getter for the tools list
-    public List<Slot> Tools => tools;
+    public List<Slot> Slot => tools;
     private void Start()
     {
         
@@ -39,6 +39,7 @@ public class ToolShop : Shop
 
                 slots[i].transform.GetChild(2).GetComponent<Text>().text = tools[i].GetDescription();
                 slots[i].transform.GetChild(3).GetComponent<Text>().text = tools[i].GetName();
+               
             }
             catch 
             {

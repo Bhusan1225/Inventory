@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Item :ScriptableObject
 {
     [Header("Item")]
-    public int itemID;
+    public string itemID;
     public string itemName;
     public Sprite itemIcon;
 
