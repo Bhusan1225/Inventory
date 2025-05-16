@@ -308,6 +308,7 @@ MonoBehaviour:
   selectedTool: {fileID: 0}
   buyingCount: 0
   buyingCountText: {fileID: 0}
+  quantity: 0
 --- !u!1 &4064507965283441243
 GameObject:
   m_ObjectHideFlags: 0

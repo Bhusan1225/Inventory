@@ -23,8 +23,15 @@ public class InfoPopup : MonoBehaviour
 
     //bool isClosed;
    
+    public Image GetIconImage()
+    {
+        return image;
+    }
 
-    
+    public Tool GetTool()
+    {
+        return selectedTool;
+    }
 
     private void Start()
     {
@@ -41,12 +48,6 @@ public class InfoPopup : MonoBehaviour
     {
         //Reseting();
         popup.SetActive(true);
-
-
-        //popup.transform.GetChild(0).GetComponent<Image>().sprite = null;
-        //popup.transform.GetChild(1).GetComponent<Text>().text = null;
-        //popup.transform.GetChild(2).GetComponent<Text>().text = null;
-        //popup.transform.GetChild(3).GetComponent<Text>().text = null;
 
         popup.transform.GetChild(0).GetComponent<Image>().sprite = image.sprite; // slot image
         popup.transform.GetChild(1).GetComponent<Text>().text = quantityText.text;// slot Quantity
@@ -71,48 +72,34 @@ public class InfoPopup : MonoBehaviour
                 //Debug.Log("tool Name" + toolShop.Slot[i].GetName());
                 //Debug.Log("tool is " + toolShop.Slot[i].GetTool());
                 //Debug.Log("selectedTool is  " + selectedTool);
-
-
-
             }
             
         }
+        
     }
 
-    //public void findTool()
+
+    //public void AddToCart()
     //{
-    //    int i = 0;
 
-    //    while (i < toolShop.Slot.Count)
+    //    if (selectedTool != null)
     //    {
-    //        Slot Slot = toolShop.Slot[i]; // we get each slot one by one
+    //        toolShop.Remove(selectedTool);
+    //        buyingCount++;
+    //        buyingCountText.text = "" + buyingCount;
 
-    //        if (Slot != null && toolShop.Slot[i].GetName() == popup.transform.GetChild(3).GetComponent<Text>().text)
-    //        {
-    //            selectedTool = toolShop.Slot[i].GetTool();
-    //            break;
-    //        }
 
-    //        i++;
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("Null, NUll, null,null");
     //    }
     //}
-    public void AddToCart()
+    public void ClosePopup()
     {
-
-        if (selectedTool != null)
-        {
-            toolShop.Remove(selectedTool);
-            buyingCount++;
-            buyingCountText.text = "" + buyingCount;
-
-
-        }
-        else
-        {
-            Debug.Log("Null, NUll, null,null");
-        }
+        popup.SetActive(false);
+        //Reseting();
     }
-
     private void Reseting()
     {
         selectedTool = null; // Reset in case it's reused
@@ -120,9 +107,5 @@ public class InfoPopup : MonoBehaviour
        // isClosed = true;
     }
 
-    public void ClosePopup()
-    {
-        popup.SetActive(false);
-        //Reseting();
-    }
+    
 }

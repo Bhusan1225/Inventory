@@ -8,7 +8,7 @@ using Unity.Burst.CompilerServices;
 public class ToolShop : Shop
 {
     [SerializeField]  List<Slot> tools = new List<Slot>();
-    [SerializeField] private GameObject toolslotHolder;
+    [SerializeField]  GameObject toolslotHolder;
 
     private GameObject[] slots; // array declare
                                 // Public getter for the tools list

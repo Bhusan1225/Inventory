@@ -9,6 +9,10 @@ public abstract class Item :ScriptableObject
     public string itemName;
     public Sprite itemIcon;
 
+    public enum ItemId
+    {
+
+    }
     public string Description;
 
     public abstract Item GetItem();
