@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 7390737097315688938}
   - component: {fileID: 2303529649265746305}
   - component: {fileID: 7417528439219291063}
-  - component: {fileID: 8223107290935595548}
+  - component: {fileID: 4821265319646628167}
   m_Layer: 5
   m_Name: Slot Panel
   m_TagString: Untagged
@@ -278,20 +278,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2303529649265746305}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8223107290935595548}
-        m_TargetAssemblyTypeName: InfoPopup, Assembly-CSharp
-        m_MethodName: TransferInfo
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &8223107290935595548
+      m_Calls: []
+--- !u!114 &4821265319646628167
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -300,15 +288,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3797276170813014729}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d2204f8f90407947ab411687c2cca5a, type: 3}
+  m_Script: {fileID: 11500000, guid: 00630bf8987bfbe4d8bc77775f56cd76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popup: {fileID: 0}
-  toolShop: {fileID: 0}
-  selectedTool: {fileID: 0}
-  buyingCount: 0
-  buyingCountText: {fileID: 0}
-  quantity: 0
+  slotWeapon: {fileID: 0}
+  popupPanel: {fileID: 0}
 --- !u!1 &4064507965283441243
 GameObject:
   m_ObjectHideFlags: 0

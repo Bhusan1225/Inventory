@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca460a0d7d7ee1f43aed4864bbc28927, type: 3}
+  m_Script: {fileID: 11500000, guid: 94b2c25a321bd6342ba5e7696c90b9dd, type: 3}
   m_Name: Key
   m_EditorClassIdentifier: 
   itemID: 4
+  itemQuantity: 3
   itemName: Key
   itemIcon: {fileID: 21300000, guid: 68fba0368e8dc8842ad10756647eee14, type: 3}
-  Description: this is a key
-  toolType: 0
+  description: this is  a key

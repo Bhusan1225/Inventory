@@ -5,18 +5,16 @@ using UnityEngine;
 public abstract class Item :ScriptableObject
 {
     [Header("Item")]
-    public string itemID;
+    public int itemID;
+    public int itemQuantity;
     public string itemName;
     public Sprite itemIcon;
 
-    public enum ItemId
-    {
-
-    }
-    public string Description;
+   
+    public string description;
 
     public abstract Item GetItem();
-    public abstract Tool GetTool();
-    public abstract Misc GetMisc();
-    public abstract Consumeable GetConsumeable(); 
+    public abstract Weapons_Item GetTool();
+    public abstract Treasure_Item GetTreasure();
+    public abstract Consumeable_Item GetConsumeable(); 
 }

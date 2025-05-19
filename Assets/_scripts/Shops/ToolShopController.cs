@@ -5,14 +5,14 @@ using static UnityEditor.Progress;
 using UnityEngine.UI;
 using Unity.Burst.CompilerServices;
 
-public class ToolShop : Shop
+public class ToolShopController : MonoBehaviour
 {
-    [SerializeField]  List<Slot> tools = new List<Slot>();
+    [SerializeField]  List<WeaponSlot> weaponSlot = new List<WeaponSlot>();
     [SerializeField]  GameObject toolslotHolder;
 
     private GameObject[] slots; // array declare
-                                // Public getter for the tools list
-    public List<Slot> Slot => tools;
+                               
+    public List<WeaponSlot> Slot => weaponSlot;
     private void Start()
     {
         
@@ -23,22 +23,20 @@ public class ToolShop : Shop
         }
         RefreshUI();
     }
-    public override void DisplayShopType() // no need much
-    {
-        Debug.Log("Tool Shop");
-    }
+  
     public void RefreshUI()
     {
         for(int i = 0; i < slots.Length; i++)
         {
             try
             {
+                slots[i].GetComponent<SlotManager>().slotWeapon = weaponSlot[i].weapon;
                 slots[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
-                slots[i].transform.GetChild(0).GetComponent<Image>().sprite = tools[i].GetTool().itemIcon;
-                slots[i].transform.GetChild(1).GetComponent<Text>().text = tools[i].GetQuantity() + "";
+                slots[i].transform.GetChild(0).GetComponent<Image>().sprite = weaponSlot[i].GetWeapon().itemIcon;
+                slots[i].transform.GetChild(1).GetComponent<Text>().text = weaponSlot[i].GetQuantity() + "";
 
-                slots[i].transform.GetChild(2).GetComponent<Text>().text = tools[i].GetDescription();
-                slots[i].transform.GetChild(3).GetComponent<Text>().text = tools[i].GetName();
+                slots[i].transform.GetChild(2).GetComponent<Text>().text = weaponSlot[i].GetDescription();
+                slots[i].transform.GetChild(3).GetComponent<Text>().text = weaponSlot[i].GetName();
                
             }
             catch 
@@ -53,13 +51,17 @@ public class ToolShop : Shop
             
         }
     }
-    public void Add(Tool tool)
+    //void InitialValue()
+    //{
+
+    //}
+    public void Add(Weapons_Item weapon)
     {
        
-           // tools.Add(tool);
+           // weaponSlot.Add(weaponSlot);
            //check if inventory contains item
 
-        Slot slot = Contains(tool);
+        WeaponSlot slot = Contains(weapon);
         if (slot != null)
         {
             slot.AddQuantity(1);
@@ -67,14 +69,14 @@ public class ToolShop : Shop
         }
         else
         {
-            tools.Add(new Slot(tool, 1));
+            weaponSlot.Add(new WeaponSlot(weapon, 1));
         }
         RefreshUI();
     }
 
-    public bool Remove(Tool tool)
+    public bool Remove(Weapons_Item weapon)
     {
-        Slot temp = Contains(tool);
+        WeaponSlot temp = Contains(weapon);
 
         if (temp != null)
         {
@@ -84,16 +86,16 @@ public class ToolShop : Shop
             }
             else
             {
-                Slot slotToRemove = new Slot();
-                foreach (Slot slot in tools)
+                WeaponSlot slotToRemove = new WeaponSlot();
+                foreach (WeaponSlot slot in weaponSlot)
                 {
-                    if (slot.GetTool() == tool)
+                    if (slot.GetWeapon() == weapon)
                     {
                         slotToRemove = slot;
                         break;
                     }
                 }
-                tools.Remove(slotToRemove);
+                weaponSlot.Remove(slotToRemove);
 
             }
         }
@@ -102,15 +104,26 @@ public class ToolShop : Shop
             return false;
         }
 
-            RefreshUI();
+        RefreshUI();
         return true;
     }
 
-    public Slot Contains(Tool tool)
+    //public bool Remove(Weapons_Item weapon)
+    //{
+
+    //    weaponSlot.Remove(weapon);
+
+
+    //    RefreshUI();
+    //    return true;
+    //}
+
+
+    public WeaponSlot Contains(Weapons_Item weapon)
     {
-        foreach (Slot slot in tools)
+        foreach (WeaponSlot slot in weaponSlot)
         {
-            if(slot.GetTool() == tool )
+            if(slot.GetWeapon() == weapon )
             {
                 return slot;
             }

@@ -13,8 +13,8 @@ public class InfoPopup : MonoBehaviour
     private Text descriptionText;
     private Text nameText;
 
-    [SerializeField] private ToolShop toolShop;
-    public Tool selectedTool = null ;
+    [SerializeField] private ToolShopController toolShop;
+    public Weapons_Item selectedTool = null ;
 
     [SerializeField] int buyingCount;
     [SerializeField] TextMeshProUGUI buyingCountText;
@@ -28,7 +28,7 @@ public class InfoPopup : MonoBehaviour
         return image;
     }
 
-    public Tool GetTool()
+    public Weapons_Item GetTool()
     {
         return selectedTool;
     }
@@ -44,39 +44,7 @@ public class InfoPopup : MonoBehaviour
 
     }
 
-    public void TransferInfo()
-    {
-        //Reseting();
-        popup.SetActive(true);
 
-        popup.transform.GetChild(0).GetComponent<Image>().sprite = image.sprite; // slot image
-        popup.transform.GetChild(1).GetComponent<Text>().text = quantityText.text;// slot Quantity
-        popup.transform.GetChild(2).GetComponent<Text>().text = descriptionText.text; // slot description
-        popup.transform.GetChild(3).GetComponent<Text>().text = nameText.text; // slot nameText
-
-        findTool();
-    }
-
-    public void findTool()
-    {
- 
-        for (int i = 0; i < toolShop.Slot.Count; i++)
-        {
-            Slot Slot = toolShop.Slot[i]; // we got all slots info one by one here 
-            int Quantity = toolShop.Slot[i].GetQuantity();  
-            //Debug.Log("Slot Name" + toolShop.Slot[i].GetName());
-            if (Slot != null && toolShop.Slot[i].GetName() == popup.transform.GetChild(3).GetComponent<Text>().text)
-            {
-                selectedTool = toolShop.Slot[i].GetTool();
-                quantity = toolShop.Slot[i].GetQuantity();
-                //Debug.Log("tool Name" + toolShop.Slot[i].GetName());
-                //Debug.Log("tool is " + toolShop.Slot[i].GetTool());
-                //Debug.Log("selectedTool is  " + selectedTool);
-            }
-            
-        }
-        
-    }
 
 
     //public void AddToCart()

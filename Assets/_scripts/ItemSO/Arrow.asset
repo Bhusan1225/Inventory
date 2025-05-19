@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca460a0d7d7ee1f43aed4864bbc28927, type: 3}
+  m_Script: {fileID: 11500000, guid: e9c10959213a9b14ea93f4e4b6e95c45, type: 3}
   m_Name: Arrow
   m_EditorClassIdentifier: 
   itemID: 1
+  itemQuantity: 4
   itemName: Arrow
   itemIcon: {fileID: 21300000, guid: 98bdcbf4fc31e2340bc64a5db9ac98f8, type: 3}
-  Description: this is a Arrow.
-  toolType: 0
+  description: This is a Arrow
