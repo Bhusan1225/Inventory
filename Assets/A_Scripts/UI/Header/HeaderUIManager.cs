@@ -13,8 +13,8 @@ public class HeaderUIManager : UIManager
 
     void Start()
     {
-        maxGold = 500;
-        maxWeight = 200;
+        maxGold = 200;
+        maxWeight = 100;
 
        
         goldText.text = "Gold: " + maxGold;
@@ -24,7 +24,7 @@ public class HeaderUIManager : UIManager
     public void DeductGold_Weight(Weapons_Item popUpWeapon)
     {
         
-        if (maxGold >= popUpWeapon.itemPrice || maxWeight >= popUpWeapon.itemWeight)
+        if (maxGold >= popUpWeapon.itemPrice && maxWeight >= popUpWeapon.itemWeight)
         {
             maxGold -= popUpWeapon.itemPrice;
             maxWeight -= popUpWeapon.itemWeight;

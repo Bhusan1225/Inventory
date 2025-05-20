@@ -9,7 +9,7 @@ using TMPro;
 public class ToolShopController : MonoBehaviour
 {
     [SerializeField]  List<WeaponSlot> weaponSlot = new List<WeaponSlot>();
-    [SerializeField]  GameObject toolslotHolder;
+    [SerializeField]  GameObject weaponSlotHolder;
 
     private GameObject[] slots; // array declare
                                
@@ -17,10 +17,10 @@ public class ToolShopController : MonoBehaviour
     private void Start()
     {
         
-        slots = new GameObject[toolslotHolder.transform.childCount]; // array initialize, where i set size of array
-        for (int i = 0; i < toolslotHolder.transform.childCount; i++)
+        slots = new GameObject[weaponSlotHolder.transform.childCount]; // array initialize, where i set size of array
+        for (int i = 0; i < weaponSlotHolder.transform.childCount; i++)
         {
-            slots[i] = toolslotHolder.transform.GetChild(i).gameObject;
+            slots[i] = weaponSlotHolder.transform.GetChild(i).gameObject;
         }
         RefreshUI();
     }
@@ -56,7 +56,7 @@ public class ToolShopController : MonoBehaviour
     public void Add(Weapons_Item weapon)
     {
        
-           // weaponSlot.Add(weaponSlot);
+           // itemSlot.Add(itemSlot);
            //check if inventory contains item
 
         WeaponSlot slot = Contains(weapon);
@@ -109,7 +109,7 @@ public class ToolShopController : MonoBehaviour
     //public bool Remove(Weapons_Item weapon)
     //{
 
-    //    weaponSlot.Remove(weapon);
+    //    itemSlot.Remove(weapon);
 
 
     //    RefreshUI();

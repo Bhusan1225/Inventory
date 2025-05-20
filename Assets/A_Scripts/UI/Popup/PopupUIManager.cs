@@ -17,6 +17,8 @@ public class PopupUIManager : UIManager
     [SerializeField] int buyingCount;
     [SerializeField] TextMeshProUGUI buyingCountText;
     [SerializeField] HeaderUIManager headerUI;
+
+    [SerializeField] InventoryController inventoryController;
     public void SetPopupData(Weapons_Item weapon, TextMeshProUGUI qtyText)
     {
         this.popUpWeapon = weapon;
@@ -52,9 +54,12 @@ public class PopupUIManager : UIManager
             
     }
     
-    public Weapons_Item GetPopUpWeapon()
+    public void BuyingItems()
     {
-        return popUpWeapon;
+        Debug.Log("Buying Quatity: " + buyingCount);
+        inventoryController.Add(popUpWeapon, buyingCount);
+        resetting();
+
     }
 
     public void close()

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "new Tool Class", menuName = "Item/Consumable")]
+[CreateAssetMenu(fileName = "new item Class", menuName = "Item/Consumable")]
 public class Consumeable_Item : Item
 {
     [Header("Consumable")]

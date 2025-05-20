@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "new Tool Class", menuName ="Item/Tool")]
+[CreateAssetMenu(fileName = "new Item Class", menuName ="Item/Weapon")]
 public class Weapons_Item :Item
 {
 
