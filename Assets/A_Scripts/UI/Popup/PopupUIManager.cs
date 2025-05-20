@@ -7,19 +7,25 @@ using UnityEditor.VisionOS;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PopupUIManager : MonoBehaviour
+public class PopupUIManager : UIManager
 {
-    [SerializeField] private Weapons_Item popUpWeapon;
-    [SerializeField] private TextMeshProUGUI popUpQuantity;
-    //[SerializeField] private int weaponQuantity; // this will be the original quantity
+
+    [SerializeField] protected Weapons_Item popUpWeapon;
+    [SerializeField] protected TextMeshProUGUI popUpQuantity;
 
     [SerializeField] ToolShopController toolShop;
     [SerializeField] int buyingCount;
     [SerializeField] TextMeshProUGUI buyingCountText;
-
+    [SerializeField] HeaderUIManager headerUI;
+    public void SetPopupData(Weapons_Item weapon, TextMeshProUGUI qtyText)
+    {
+        this.popUpWeapon = weapon;
+        this.popUpQuantity = qtyText;
+    }
     private void OnEnable()
     {
         buyingCount = 0;
+        //headerUI = GetComponent<HeaderUIManager>(); ;
     }
 
     public void addWeapon()
@@ -34,8 +40,9 @@ public class PopupUIManager : MonoBehaviour
 
             Debug.Log("Quantaty "+ popUpQuantity.text);
             this.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = popUpQuantity.text;
+            headerUI.DeductGold_Weight(popUpWeapon);
 
-            
+
 
         }
         else
@@ -44,12 +51,7 @@ public class PopupUIManager : MonoBehaviour
         }
             
     }
-    public void SetPopupData(Weapons_Item weapon, TextMeshProUGUI qtyText)
-    {
-        this.popUpWeapon = weapon;
-        this.popUpQuantity = qtyText;
-    }
-
+    
     public Weapons_Item GetPopUpWeapon()
     {
         return popUpWeapon;

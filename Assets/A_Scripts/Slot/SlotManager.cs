@@ -9,12 +9,13 @@ public class SlotManager : MonoBehaviour
 {
     public Weapons_Item slotWeapon;
     public GameObject popupPanel;
+    //public GameObject UIManager;
 
     public void transforDataToPopup()
     {
-    
+       
         popupPanel.SetActive(true);
-        popupPanel.GetComponent<PopupUIManager>().SetPopupData(slotWeapon, this.transform.GetChild(1).GetComponent<TextMeshProUGUI>()); ;
+        popupPanel.GetComponent<PopupUIManager>().SetPopupData(slotWeapon, this.transform.GetChild(1).GetComponent<TextMeshProUGUI>());
         popupPanel.transform.GetChild(0).GetComponent<Image>().sprite = slotWeapon.itemIcon;
         // popupPanel.GetComponent<PopupUIManager>().popUpQuantity = slotWeapon.itemQuantity;
         //popupPanel.GetComponent<PopupUIManager>().popUpQuantity = this.transform.GetChild(1).GetComponent<Text>();

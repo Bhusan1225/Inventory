@@ -637,6 +637,7 @@ MonoBehaviour:
   toolShop: {fileID: 0}
   buyingCount: 0
   buyingCountText: {fileID: 6501562324950596371}
+  headerUI: {fileID: 0}
 --- !u!1 &6401861364964904221
 GameObject:
   m_ObjectHideFlags: 0

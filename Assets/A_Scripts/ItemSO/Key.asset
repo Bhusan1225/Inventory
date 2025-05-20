@@ -16,4 +16,6 @@ MonoBehaviour:
   itemQuantity: 3
   itemName: Key
   itemIcon: {fileID: 21300000, guid: 68fba0368e8dc8842ad10756647eee14, type: 3}
+  itemWeight: 2
+  itemPrice: 25
   description: this is  a key
