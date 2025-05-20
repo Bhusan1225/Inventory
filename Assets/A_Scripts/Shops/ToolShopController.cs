@@ -4,6 +4,7 @@ using UnityEngine;
 using static UnityEditor.Progress;
 using UnityEngine.UI;
 using Unity.Burst.CompilerServices;
+using TMPro;
 
 public class ToolShopController : MonoBehaviour
 {
@@ -33,10 +34,10 @@ public class ToolShopController : MonoBehaviour
                 slots[i].GetComponent<SlotManager>().slotWeapon = weaponSlot[i].weapon;
                 slots[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
                 slots[i].transform.GetChild(0).GetComponent<Image>().sprite = weaponSlot[i].GetWeapon().itemIcon;
-                slots[i].transform.GetChild(1).GetComponent<Text>().text = weaponSlot[i].GetQuantity() + "";
+                slots[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = weaponSlot[i].GetQuantity() + "";
 
-                slots[i].transform.GetChild(2).GetComponent<Text>().text = weaponSlot[i].GetDescription();
-                slots[i].transform.GetChild(3).GetComponent<Text>().text = weaponSlot[i].GetName();
+                slots[i].transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = weaponSlot[i].GetDescription();
+                slots[i].transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = weaponSlot[i].GetName();
                
             }
             catch 
@@ -44,17 +45,14 @@ public class ToolShopController : MonoBehaviour
                 
                 slots[i].transform.GetChild(0).GetComponent<Image>().sprite = null;
                 slots[i].transform.GetChild(0).GetComponent<Image>().enabled = false;
-                slots[i].transform.GetChild(1).GetComponent<Text>().text = "";
-                slots[i].transform.GetChild(2).GetComponent<Text>().text = "";
-                slots[i].transform.GetChild(3).GetComponent<Text>().text = "";
+                slots[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
+                slots[i].transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "";
+                slots[i].transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = "";
             }
             
         }
     }
-    //void InitialValue()
-    //{
-
-    //}
+   
     public void Add(Weapons_Item weapon)
     {
        

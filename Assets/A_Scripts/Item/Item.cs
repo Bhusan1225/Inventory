@@ -10,7 +10,10 @@ public abstract class Item :ScriptableObject
     public string itemName;
     public Sprite itemIcon;
 
-   
+    public int itemWeight;
+    public int itemPrice; // in goldCoins
+
+
     public string description;
 
     public abstract Item GetItem();
