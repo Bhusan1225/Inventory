@@ -10,8 +10,8 @@ public class ItemSlot
     //[SerializeField] public Weapons_Item weapon;
     int itemQuantity;
     int quantity;
-    private Sprite itemIcon;
-    private bool isInitialized = false;
+    //private Sprite itemIcon;
+   // private bool isInitialized = false;
 
 
 

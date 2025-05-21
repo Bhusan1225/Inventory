@@ -9,11 +9,11 @@ using UnityEngine.UI;
 
 public class PopupUIManager : UIManager
 {
-
+    //[SerializeField] protected Item popUpItem;
     [SerializeField] protected Weapons_Item popUpWeapon;
     [SerializeField] protected TextMeshProUGUI popUpQuantity;
 
-    [SerializeField] ToolShopController toolShop;
+    [SerializeField] WeaponShopController weaponShop;
     [SerializeField] int buyingCount;
     [SerializeField] TextMeshProUGUI buyingCountText;
     [SerializeField] HeaderUIManager headerUI;
@@ -24,6 +24,13 @@ public class PopupUIManager : UIManager
         this.popUpWeapon = weapon;
         this.popUpQuantity = qtyText;
     }
+
+
+    //public void SetPopupData(Item item, TextMeshProUGUI qtyText)
+    //{
+    //    this.popUpItem = item;
+    //    this.popUpQuantity = qtyText;
+    //}
     private void OnEnable()
     {
         buyingCount = 0;
@@ -36,13 +43,13 @@ public class PopupUIManager : UIManager
         
         if (popUpWeapon != null )
         {
-            toolShop.Remove(popUpWeapon);
+            weaponShop.Remove(popUpWeapon);
             buyingCount++;
             buyingCountText.text = "" + buyingCount;
 
             Debug.Log("Quantaty "+ popUpQuantity.text);
             this.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = popUpQuantity.text;
-            headerUI.DeductGold_Weight(popUpWeapon);
+            headerUI.DeductGold_Weight(popUpWeapon, 1);
 
 
 
@@ -62,6 +69,13 @@ public class PopupUIManager : UIManager
 
     }
 
+    public void CancelBuying()
+    {
+        weaponShop.Add(popUpWeapon, buyingCount);
+        headerUI.RestoreGoldAndWeight(popUpWeapon, buyingCount);
+        this.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = popUpQuantity.text;
+        resetting();
+    }
     public void close()
     {
       resetting();
@@ -71,5 +85,6 @@ public class PopupUIManager : UIManager
     private void resetting()
     {
         buyingCount = 0;
+        buyingCountText.text = "" + buyingCount;
     }
 }

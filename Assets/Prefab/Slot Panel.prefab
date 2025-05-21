@@ -467,7 +467,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2303529649265746305}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4821265319646628167}
+        m_TargetAssemblyTypeName: SlotManager, Assembly-CSharp
+        m_MethodName: transforDataToPopup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4821265319646628167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,8 +492,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00630bf8987bfbe4d8bc77775f56cd76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slotItem: {fileID: 0}
   slotWeapon: {fileID: 0}
-  popupPanel: {fileID: 0}
+  shopPopupPanel: {fileID: 0}
+  inventoryPopupPanel: {fileID: 0}
 --- !u!1 &7348639061232527293
 GameObject:
   m_ObjectHideFlags: 0

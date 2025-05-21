@@ -29,7 +29,7 @@ public class InventoryController : MonoBehaviour
         {
             try
             {
-                //slots[i].GetComponent<SlotManager>().slotWeapon = itemSlot[i].GetItem();
+                slots[i].GetComponent<SlotManager>().slotItem = itemSlot[i].GetItem();
                 slots[i].transform.GetChild(0).GetComponent<Image>().enabled = true;
                 slots[i].transform.GetChild(0).GetComponent<Image>().sprite = itemSlot[i].GetIcon();
                 slots[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = itemSlot[i].GetQuantity() + "";
@@ -105,7 +105,39 @@ public class InventoryController : MonoBehaviour
         return true;
     }
 
-  
+    public bool Remove(Item item)
+    {
+        ItemSlot temp = Contains(item);
+
+        if (temp != null)
+        {
+            if (temp.GetQuantity() > 1)
+            {
+                temp.SubQuantity(1);
+            }
+            else
+            {
+                ItemSlot slotToRemove = new ItemSlot();
+                foreach (ItemSlot slot in itemSlot)
+                {
+                    if (slot.GetItem() == item)
+                    {
+                        slotToRemove = slot;
+                        break;
+                    }
+                }
+                itemSlot.Remove(slotToRemove);
+
+            }
+        }
+        else
+        {
+            return false;
+        }
+
+        RefreshUI();
+        return true;
+    }
 
 
     public ItemSlot Contains(Item item)

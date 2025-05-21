@@ -5,38 +5,81 @@ using UnityEngine;
 
 public class HeaderUIManager : UIManager
 {
-    int maxWeight;
-    int maxGold;
+    [SerializeField] int maxWeight ;
+    [SerializeField] int maxGold;
 
+    int weight;
+    int gold;
     [SerializeField] TextMeshProUGUI weightText;
     [SerializeField] TextMeshProUGUI goldText;
 
     void Start()
     {
-        maxGold = 200;
-        maxWeight = 100;
+        weight = maxWeight;
+        gold = maxGold;
 
        
-        goldText.text = "Gold: " + maxGold;
-        weightText.text = "Weight: " + maxWeight;
+        goldText.text = "Gold: " + gold;
+        weightText.text = "Weight: " + weight;
     }
 
-    public void DeductGold_Weight(Weapons_Item popUpWeapon)
+    public void DeductGold_Weight(Weapons_Item popUpWeapon, int quatity) // when buying items from Inventory
     {
         
-        if (maxGold >= popUpWeapon.itemPrice && maxWeight >= popUpWeapon.itemWeight)
+        if (gold >= popUpWeapon.itemPrice && weight >= popUpWeapon.itemWeight)
         {
-            maxGold -= popUpWeapon.itemPrice;
-            maxWeight -= popUpWeapon.itemWeight;
+            gold -= quatity * popUpWeapon.itemPrice;
+            weight -= quatity *popUpWeapon.itemWeight;
 
             
-            goldText.text = "Gold: " + maxGold;
-            weightText.text = "Weight: " + maxWeight;
+            goldText.text = "Gold: " + gold;
+            weightText.text = "Weight: " + weight;
         }
         else
         {
           
             Debug.LogWarning("You cannot buy this item. Not enough gold or weight capacity.");
+        }
+    }
+
+
+    public void RestoreGoldAndWeight(Item popUpItem, int quatity) //when selling items from Inventory
+    {
+
+        if (quatity > 0 && gold <maxGold && weight < maxWeight)
+        {
+            gold += quatity *popUpItem.itemPrice;
+            weight += quatity * popUpItem.itemWeight;
+
+
+            goldText.text = "Gold: " + gold;
+            weightText.text = "Weight: " + weight;
+        }
+        else
+        {
+
+            Debug.LogWarning("You cannot buy this item. Not enough gold or weight capacity.");
+        }
+    }
+
+
+    public void RestoreGoldAndWeight(Weapons_Item popUpWeapon, int quatity) //when you cancel to buy the items in store
+
+    {
+
+        if (quatity > 0)
+        {
+            gold += quatity * popUpWeapon.itemPrice;
+            weight += quatity * popUpWeapon.itemWeight;
+
+
+            goldText.text = "Gold: " + gold;
+            weightText.text = "Weight: " + weight;
+        }
+        else
+        {
+
+            Debug.LogWarning("nothing in the cart");
         }
     }
 }

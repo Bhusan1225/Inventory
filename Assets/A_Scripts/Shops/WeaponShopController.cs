@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using Unity.Burst.CompilerServices;
 using TMPro;
 
-public class ToolShopController : MonoBehaviour
+public class WeaponShopController : MonoBehaviour
 {
     [SerializeField]  List<WeaponSlot> weaponSlot = new List<WeaponSlot>();
     [SerializeField]  GameObject weaponSlotHolder;
@@ -72,6 +72,25 @@ public class ToolShopController : MonoBehaviour
         RefreshUI();
     }
 
+    public void Add(Weapons_Item weapon, int quantity)
+    {
+
+        // itemSlot.Add(itemSlot);
+        //check if inventory contains item
+
+        WeaponSlot slot = Contains(weapon);
+        if (slot != null)
+        {
+            slot.AddQuantity(quantity);
+
+        }
+        else
+        {
+            weaponSlot.Add(new WeaponSlot(weapon, quantity));
+        }
+        RefreshUI();
+    }
+
     public bool Remove(Weapons_Item weapon)
     {
         WeaponSlot temp = Contains(weapon);
@@ -106,18 +125,7 @@ public class ToolShopController : MonoBehaviour
         return true;
     }
 
-    //public bool Remove(Weapons_Item weapon)
-    //{
-
-    //    itemSlot.Remove(weapon);
-
-
-    //    RefreshUI();
-    //    return true;
-    //}
-
-
-    public WeaponSlot Contains(Weapons_Item weapon)
+      public WeaponSlot Contains(Weapons_Item weapon)
     {
         foreach (WeaponSlot slot in weaponSlot)
         {
