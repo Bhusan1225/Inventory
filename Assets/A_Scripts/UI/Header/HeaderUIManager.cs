@@ -42,6 +42,25 @@ public class HeaderUIManager : UIManager
         }
     }
 
+    public void DeductGold_Weight(Item popUpItem, int quatity) // when buying items from Inventory
+    {
+
+        if (gold >= popUpItem.itemPrice && weight >= popUpItem.itemWeight)
+        {
+            gold -= quatity * popUpItem.itemPrice;
+            weight -= quatity * popUpItem.itemWeight;
+
+
+            goldText.text = "Gold: " + gold;
+            weightText.text = "Weight: " + weight;
+        }
+        else
+        {
+
+            Debug.LogWarning("You cannot buy this item. Not enough gold or weight capacity.");
+        }
+    }
+
 
     public void RestoreGoldAndWeight(Item popUpItem, int quatity) //when selling items from Inventory
     {

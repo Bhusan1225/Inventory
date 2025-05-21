@@ -13,7 +13,7 @@ public class InventoryPopupUIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI sellingCountText;
     [SerializeField] HeaderUIManager headerUI;
 
-    [SerializeField] InventoryController inventoryController;
+    [SerializeField] InventoryController inventory;
     public void SetPopupData(Item item, TextMeshProUGUI qtyText)
     {
         this.popUpItem = item;
@@ -37,7 +37,7 @@ public class InventoryPopupUIManager : MonoBehaviour
 
         if (popUpItem != null)
         {
-            inventoryController.Remove(popUpItem);
+            inventory.Remove(popUpItem);
             sellingCount++;
             sellingCountText.text = "" + sellingCount;
 
@@ -59,14 +59,18 @@ public class InventoryPopupUIManager : MonoBehaviour
     {
         Debug.Log("Buying Quatity: " + sellingCount);
         Debug.Log("Congrats, you sell the item " + sellingCount);
-        inventoryController.Remove(popUpItem, sellingCount);
+        inventory.Remove(popUpItem, sellingCount);
         resetting();
 
     }
 
-    public void Cancel()
+    public void CancelSelling()
     {
 
+        inventory.Add(popUpItem, sellingCount);
+        headerUI.DeductGold_Weight(popUpItem, sellingCount);
+        this.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = popUpQuantity.text;
+        resetting();
     }
     public void close()
     {

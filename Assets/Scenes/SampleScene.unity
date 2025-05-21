@@ -6137,6 +6137,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5209712883338094863, guid: 4f05967610b0eb44aa609a63459fc929, type: 3}
   m_PrefabInstance: {fileID: 7613313191256984188}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6632355907965637170 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 120619363842822708, guid: 4f05967610b0eb44aa609a63459fc929, type: 3}
+  m_PrefabInstance: {fileID: 7613313191256984188}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6632355907965637169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8114f455e11edf43b9a5d42568907fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7159370691658363175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6321,6 +6332,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1839893324}
     - target: {fileID: 120619363842822708, guid: 4f05967610b0eb44aa609a63459fc929, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 513363330}
+    - target: {fileID: 120619363842822708, guid: 4f05967610b0eb44aa609a63459fc929, type: 3}
       propertyPath: weaponShop
       value: 
       objectReference: {fileID: 648181846}
@@ -6339,6 +6354,14 @@ PrefabInstance:
     - target: {fileID: 2421999169467804310, guid: 4f05967610b0eb44aa609a63459fc929, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 6632355907965637170}
+    - target: {fileID: 2421999169467804310, guid: 4f05967610b0eb44aa609a63459fc929, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SellingItems
+      objectReference: {fileID: 0}
+    - target: {fileID: 2421999169467804310, guid: 4f05967610b0eb44aa609a63459fc929, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InventoryPopupUIManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3978242894673582757, guid: 4f05967610b0eb44aa609a63459fc929, type: 3}
       propertyPath: m_Pivot.x
@@ -6440,13 +6463,57 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5378013011387944561, guid: 4f05967610b0eb44aa609a63459fc929, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378013011387944561, guid: 4f05967610b0eb44aa609a63459fc929, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378013011387944561, guid: 4f05967610b0eb44aa609a63459fc929, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6632355907965637170}
+    - target: {fileID: 5378013011387944561, guid: 4f05967610b0eb44aa609a63459fc929, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378013011387944561, guid: 4f05967610b0eb44aa609a63459fc929, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CancelSelling
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378013011387944561, guid: 4f05967610b0eb44aa609a63459fc929, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InventoryPopupUIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378013011387944561, guid: 4f05967610b0eb44aa609a63459fc929, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6318420891336968645, guid: 4f05967610b0eb44aa609a63459fc929, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 6632355907965637170}
+    - target: {fileID: 6318420891336968645, guid: 4f05967610b0eb44aa609a63459fc929, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: addWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318420891336968645, guid: 4f05967610b0eb44aa609a63459fc929, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InventoryPopupUIManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8544875174324744694, guid: 4f05967610b0eb44aa609a63459fc929, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 6632355907965637170}
+    - target: {fileID: 8544875174324744694, guid: 4f05967610b0eb44aa609a63459fc929, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: close
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544875174324744694, guid: 4f05967610b0eb44aa609a63459fc929, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InventoryPopupUIManager, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 716596073865441597, guid: 4f05967610b0eb44aa609a63459fc929, type: 3}
