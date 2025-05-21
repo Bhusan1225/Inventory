@@ -9,11 +9,12 @@ public class InventoryPopupUIManager : MonoBehaviour
     [SerializeField] protected TextMeshProUGUI popUpQuantity;
 
     [SerializeField] WeaponShopController weaponShop;
+    [SerializeField] InventoryController inventory;
     [SerializeField] int sellingCount;
     [SerializeField] TextMeshProUGUI sellingCountText;
     [SerializeField] HeaderUIManager headerUI;
 
-    [SerializeField] InventoryController inventory;
+    
     public void SetPopupData(Item item, TextMeshProUGUI qtyText)
     {
         this.popUpItem = item;
@@ -21,11 +22,7 @@ public class InventoryPopupUIManager : MonoBehaviour
     }
 
 
-    //public void SetPopupData(Item item, TextMeshProUGUI qtyText)
-    //{
-    //    this.popUpItem = item;
-    //    this.popUpQuantity = qtyText;
-    //}
+    
     private void OnEnable()
     {
         resetting();
@@ -72,6 +69,8 @@ public class InventoryPopupUIManager : MonoBehaviour
         this.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = popUpQuantity.text;
         resetting();
     }
+
+    
     public void close()
     {
         resetting();
