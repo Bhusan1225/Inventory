@@ -9,8 +9,8 @@ using UnityEngine.UI;
 
 public class PopupUIManager : UIManager
 {
-    //[SerializeField] protected Item popUpItem;
-    [SerializeField] protected Weapons_Item popUpWeapon;
+    
+    [SerializeField] protected Weapon_Item popUpWeapon;
     [SerializeField] protected TextMeshProUGUI popUpQuantity;
 
     [SerializeField] WeaponShopController weaponShop;
@@ -19,28 +19,20 @@ public class PopupUIManager : UIManager
     [SerializeField] HeaderUIManager headerUI;
 
     [SerializeField] InventoryController inventoryController;
-    public void SetPopupData(Weapons_Item weapon, TextMeshProUGUI qtyText)
+    public void SetPopupData(Weapon_Item weapon, TextMeshProUGUI qtyText)
     {
         this.popUpWeapon = weapon;
         this.popUpQuantity = qtyText;
     }
 
-
-    //public void SetPopupData(Item item, TextMeshProUGUI qtyText)
-    //{
-    //    this.popUpItem = item;
-    //    this.popUpQuantity = qtyText;
-    //}
     private void OnEnable()
     {
         buyingCount = 0;
-        //headerUI = GetComponent<HeaderUIManager>(); ;
+        buyingCountText.text = "" + buyingCount;
     }
 
     public void addWeapon()
     {
-        
-        
         if (popUpWeapon != null )
         {
             weaponShop.Remove(popUpWeapon);
@@ -50,8 +42,6 @@ public class PopupUIManager : UIManager
             Debug.Log("Quantaty "+ popUpQuantity.text);
             this.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = popUpQuantity.text;
             headerUI.DeductGold_Weight(popUpWeapon, 1);
-
-
 
         }
         else

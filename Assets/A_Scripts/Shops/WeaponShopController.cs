@@ -53,7 +53,7 @@ public class WeaponShopController : MonoBehaviour
         }
     }
    
-    public void Add(Weapons_Item weapon)
+    public void Add(Weapon_Item weapon)
     {
        
            // itemSlot.Add(itemSlot);
@@ -72,7 +72,7 @@ public class WeaponShopController : MonoBehaviour
         RefreshUI();
     }
 
-    public void Add(Weapons_Item weapon, int quantity)
+    public void Add(Weapon_Item weapon, int quantity)
     {
 
         // itemSlot.Add(itemSlot);
@@ -91,7 +91,7 @@ public class WeaponShopController : MonoBehaviour
         RefreshUI();
     }
 
-    public bool Remove(Weapons_Item weapon)
+    public bool Remove(Weapon_Item weapon)
     {
         WeaponSlot temp = Contains(weapon);
 
@@ -125,7 +125,7 @@ public class WeaponShopController : MonoBehaviour
         return true;
     }
 
-      public WeaponSlot Contains(Weapons_Item weapon)
+      public WeaponSlot Contains(Weapon_Item weapon)
     {
         foreach (WeaponSlot slot in weaponSlot)
         {

@@ -23,13 +23,13 @@ public class HeaderUIManager : UIManager
         weightText.text = "Weight: " + weight;
     }
 
-    public void DeductGold_Weight(Weapons_Item popUpWeapon, int quatity) // when buying items from Inventory
+    public void DeductGold_Weight(Consumeable_Item popUpConsumeable, int quatity) // when buying items from Inventory
     {
         
-        if (gold >= popUpWeapon.itemPrice && weight >= popUpWeapon.itemWeight)
+        if (gold >= popUpConsumeable.itemPrice && weight >= popUpConsumeable.itemWeight)
         {
-            gold -= quatity * popUpWeapon.itemPrice;
-            weight -= quatity *popUpWeapon.itemWeight;
+            gold -= quatity * popUpConsumeable.itemPrice;
+            weight -= quatity *popUpConsumeable.itemWeight;
 
             
             goldText.text = "Gold: " + gold;
@@ -40,6 +40,35 @@ public class HeaderUIManager : UIManager
           
             Debug.LogWarning("You cannot buy this item. Not enough gold or weight capacity.");
         }
+    }
+
+    public void DeductGold_Weight(Weapon_Item popUpWeapon, int quatity) // when buying items from Inventory
+    {
+
+        if (gold >= popUpWeapon.itemPrice && weight >= popUpWeapon.itemWeight)
+        {
+            gold -= quatity * popUpWeapon.itemPrice;
+            weight -= quatity * popUpWeapon.itemWeight;
+
+
+            goldText.text = "Gold: " + gold;
+            weightText.text = "Weight: " + weight;
+        }
+        else
+        {
+
+            Debug.LogWarning("You cannot buy this item. Not enough gold or weight capacity.");
+        }
+    }
+
+    void ReduceGoldandWeight()
+    { 
+    
+    }
+
+    void AddGoldandWeight()
+    {
+
     }
 
     public void DeductGold_Weight(Item popUpItem, int quatity) // when buying items from Inventory
@@ -82,7 +111,7 @@ public class HeaderUIManager : UIManager
     }
 
 
-    public void RestoreGoldAndWeight(Weapons_Item popUpWeapon, int quatity) //when you cancel to buy the items in store
+    public void RestoreGoldAndWeight(Consumeable_Item popUpWeapon, int quatity) //when you cancel to buy the items in store
 
     {
 

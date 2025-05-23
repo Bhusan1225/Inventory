@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-//    [SerializeField] protected Weapons_Item popUpWeapon;
+//    [SerializeField] protected Consumeable_Item popUpConsumeable;
 //    [SerializeField] protected TextMeshProUGUI popUpQuantity;
 //    // Start is called before the first frame update
-//    public void SetPopupData(Weapons_Item weapon, TextMeshProUGUI qtyText)
+//    public void SetPopupData(Consumeable_Item consumeable, TextMeshProUGUI qtyText)
 //    {
-//        this.popUpWeapon = weapon;
+//        this.popUpConsumeable = consumeable;
 //        this.popUpQuantity = qtyText;
 //    }
 

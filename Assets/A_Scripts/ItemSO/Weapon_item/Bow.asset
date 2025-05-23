@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9c10959213a9b14ea93f4e4b6e95c45, type: 3}
-  m_Name: Sword
+  m_Script: {fileID: 11500000, guid: 03f14bb39d1b03a48b51f740ccd3545a, type: 3}
+  m_Name: Bow
   m_EditorClassIdentifier: 
-  itemID: 6
-  itemQuantity: 1
-  itemName: Sword
-  itemIcon: {fileID: 21300000, guid: 08d5ec2d201ece949a5e428ba3ea0e63, type: 3}
-  itemWeight: 5
+  itemID: 5
+  itemQuantity: 10
+  itemName: Bow
+  itemIcon: {fileID: 21300000, guid: 8f908a0041a1aee4c8b02d9449ebd224, type: 3}
+  itemWeight: 10
   itemPrice: 25
-  description: This is Sword
+  description: This is a bow.

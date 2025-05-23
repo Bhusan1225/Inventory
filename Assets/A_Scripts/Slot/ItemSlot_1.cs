@@ -4,7 +4,7 @@ using UnityEngine;
 public class WeaponSlot
 {
     private Item item;
-    [SerializeField] public Weapons_Item weapon;
+    [SerializeField] public Weapon_Item weapon;
     int weaponQuantity;
     int quantity;
     private Sprite weaponIcon;
@@ -30,7 +30,7 @@ public class WeaponSlot
         quantity = _quantity;
     }
 
-    public WeaponSlot(Weapons_Item _tool, int _quantity)
+    public WeaponSlot(Weapon_Item _tool, int _quantity)
     {
         weaponQuantity = weapon.itemQuantity ;
         weapon = _tool;
@@ -38,7 +38,7 @@ public class WeaponSlot
     }
 
     public Sprite GetIcon() => weaponIcon;
-    public Weapons_Item GetWeapon() => weapon;
+    public Weapon_Item GetWeapon() => weapon;
     public int GetQuantity() 
     {
         if(!isInitialized)
@@ -56,7 +56,7 @@ public class WeaponSlot
     public void SubQuantity(int _quantity) => weaponQuantity -= _quantity;
 
     //public int GetID() => slotWeapon != null ? slotWeapon.itemID : -1;
-    //public void SetTool(Weapons_Item newTool) => slotWeapon = newTool;
+    //public void SetTool(Consumeable_Item newTool) => slotWeapon = newTool;
     public Item GetItem() => item;
 
 }

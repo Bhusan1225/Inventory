@@ -17,7 +17,7 @@ public abstract class Item :ScriptableObject
     public string description;
 
     public abstract Item GetItem();
-    public abstract Weapons_Item GetTool();
+    public abstract Weapon_Item GetWeapon();
     public abstract Treasure_Item GetTreasure();
     public abstract Consumeable_Item GetConsumeable(); 
 }

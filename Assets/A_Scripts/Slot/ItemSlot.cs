@@ -7,7 +7,7 @@ public class ItemSlot
 {
     [SerializeField]
     public Item item;
-    //[SerializeField] public Weapons_Item weapon;
+    //[SerializeField] public Consumeable_Item consumeable;
     int itemQuantity;
     int quantity;
     //private Sprite itemIcon;
@@ -35,15 +35,15 @@ public class ItemSlot
       
     }
 
-    //public ItemSlot(Weapons_Item _tool, int _quantity)
+    //public ItemSlot(Consumeable_Item _tool, int _quantity)
     //{
-    //    itemQuantity = weapon.itemQuantity;
-    //    weapon = _tool;
+    //    itemQuantity = consumeable.itemQuantity;
+    //    consumeable = _tool;
     //    quantity = _quantity;
     //}
 
     public Sprite GetIcon() => item.itemIcon;
-   //public Weapons_Item GetWeapon() => weapon;
+   //public Consumeable_Item GetWeapon() => consumeable;
     public int GetQuantity()
     {
         //if (!isInitialized)
@@ -61,6 +61,6 @@ public class ItemSlot
     public void SubQuantity(int _quantity) => quantity -= _quantity;
 
     //public int GetID() => slotWeapon != null ? slotWeapon.itemID : -1;
-    //public void SetTool(Weapons_Item newTool) => slotWeapon = newTool;
+    //public void SetTool(Consumeable_Item newTool) => slotWeapon = newTool;
     public Item GetItem() => item;
 }
