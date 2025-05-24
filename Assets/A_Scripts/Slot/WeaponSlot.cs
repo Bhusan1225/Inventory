@@ -57,6 +57,6 @@ public class WeaponSlot
 
     //public int GetID() => slotWeapon != null ? slotWeapon.itemID : -1;
     //public void SetTool(Consumeable_Item newTool) => slotWeapon = newTool;
-    public Item GetItem() => item;
+    //public Item GetItem() => item;
 
 }

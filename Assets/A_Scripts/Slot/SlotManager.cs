@@ -10,9 +10,11 @@ public class SlotManager : MonoBehaviour
     public Item slotItem = null;
     public Weapon_Item slotWeapon = null;
     public Consumeable_Item slotConsumeable = null;
+    public Treasure_Item slotTreasureItem = null;
     public GameObject weaponPopupPanel;
     public GameObject inventoryPopupPanel;
     public GameObject consumeablePopupPanel;
+    public GameObject treasureItemPopupPanel;
 
     public void transforDataToPopup()
     {
@@ -41,6 +43,14 @@ public class SlotManager : MonoBehaviour
             consumeablePopupPanel.transform.GetChild(0).GetComponent<Image>().sprite = slotConsumeable.itemIcon;
             consumeablePopupPanel.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = slotConsumeable.description;
             consumeablePopupPanel.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = slotConsumeable.itemName;
+        }
+        else if (slotTreasureItem != null)
+        {
+            treasureItemPopupPanel.SetActive(true);
+            treasureItemPopupPanel.GetComponent<TreasureItemPopupPanel>().SetPopupData(slotTreasureItem, this.transform.GetChild(1).GetComponent<TextMeshProUGUI>());
+            treasureItemPopupPanel.transform.GetChild(0).GetComponent<Image>().sprite = slotTreasureItem.itemIcon;
+            treasureItemPopupPanel.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = slotTreasureItem.description;
+            treasureItemPopupPanel.transform.GetChild(3).GetComponent<TextMeshProUGUI>().text = slotTreasureItem.itemName;
         }
 
 
