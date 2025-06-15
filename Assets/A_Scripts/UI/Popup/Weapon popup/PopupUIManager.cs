@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
+
 using TMPro;
-using UnityEditor.Tilemaps;
-using UnityEditor.VisionOS;
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class PopupUIManager : UIManager
 {

@@ -7,11 +7,12 @@ public class HeaderUIManager : UIManager
 {
     [SerializeField] int maxWeight ;
     [SerializeField] int maxGold;
+    [SerializeField] TextMeshProUGUI weightText;
+    [SerializeField] TextMeshProUGUI goldText;
 
     int weight;
     int gold;
-    [SerializeField] TextMeshProUGUI weightText;
-    [SerializeField] TextMeshProUGUI goldText;
+    
 
     void Start()
     {
@@ -59,16 +60,6 @@ public class HeaderUIManager : UIManager
 
             Debug.LogWarning("You cannot buy this item. Not enough gold or weight capacity.");
         }
-    }
-
-    void ReduceGoldandWeight()
-    { 
-    
-    }
-
-    void AddGoldandWeight()
-    {
-
     }
 
     public void DeductGold_Weight(Item popUpItem, int quatity) // when buying items from Inventory
